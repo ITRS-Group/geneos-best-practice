@@ -670,3 +670,11 @@ Rows">/geneos/gateway/directory/probe/managedEntity/sampler[(@type=var(&quot;Typ
     </ruleGroup>
 </ruleGroup>
 ```
+
+<script type="module">
+	import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+	mermaid.initialize({
+		startOnLoad: true,
+		theme: 'neutral'
+	});
+</script>

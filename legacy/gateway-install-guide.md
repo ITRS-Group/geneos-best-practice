@@ -857,3 +857,11 @@ Once the correct password has been entered the command will continue as normal:
 ```
 
 For the `stop` function it is also possible to additionally add a signal, such as `-9` that will be passed to the UNIX `kill` command when stopping the Gateway.
+
+<script type="module">
+	import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+	mermaid.initialize({
+		startOnLoad: true,
+		theme: 'neutral'
+	});
+</script>

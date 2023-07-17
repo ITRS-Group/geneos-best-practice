@@ -540,3 +540,11 @@ To summarise the steps required:
 * In conjunction with the client, work out the authentication requirement and configure the Role and UserGroup Structure
 * In conjunction with the client decide whether to use Actions or Alerts and create the necessary Alerting Structure or Rule Group structure as required
 * Ensure that the client understands all of the principals used and that sufficient knowledge transfer is undertaken to enable the client to add to and modify the configuration as required
+
+<script type="module">
+	import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+	mermaid.initialize({
+		startOnLoad: true,
+		theme: 'neutral'
+	});
+</script>
