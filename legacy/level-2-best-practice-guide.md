@@ -677,4 +677,6 @@ Rows">/geneos/gateway/directory/probe/managedEntity/sampler[(@type=var(&quot;Typ
 		startOnLoad: true,
 		theme: 'neutral'
 	});
+    await mermaid.run({querySelector:'code.language-mermaid'})
+
 </script>

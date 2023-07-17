@@ -2028,4 +2028,5 @@ Gateway&amp;quot;)]</target>
 		startOnLoad: true,
 		theme: 'neutral'
 	});
+    await mermaid.run({querySelector:'code.language-mermaid'})
 </script>
