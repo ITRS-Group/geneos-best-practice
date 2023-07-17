@@ -864,4 +864,5 @@ For the `stop` function it is also possible to additionally add a signal, such a
 		startOnLoad: true,
 		theme: 'neutral'
 	});
+  await mermaid.run({querySelector:'code.language-mermaid'})
 </script>

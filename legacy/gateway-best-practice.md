@@ -547,4 +547,5 @@ To summarise the steps required:
 		startOnLoad: true,
 		theme: 'neutral'
 	});
+  await mermaid.run({querySelector:'code.language-mermaid'})
 </script>
