@@ -223,7 +223,7 @@ GateOpts: Any additional gateway options
 **N.B.** these should be used to add licence options for older gateways if required, e.g.
 
 ```bash
-GateOpts="-licence /opt/itrs/packages/gateway/GA2011.2.1-110923/licensing`"
+GateOpts="-licence /opt/itrs/packages/gateway/GA2011.2.1-110923/licensing"
 ```
 
 > **PLEASE NOTE ENCLOSING DOUBLE QUOTES!**
