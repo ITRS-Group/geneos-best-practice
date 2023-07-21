@@ -246,7 +246,7 @@ JRE_HOME=/opt/jre/home
 
 The gateway control file (`gatewayctl`) controls the creation of the gateways and associated administrative functions, such as stopping/starting etc.
 
-**The command line is: gatewayctl list | create | [gateway] [function]**
+The command line is: `gatewayctl list | create | [gateway] [function]`
 
 Where `list` will display the names of all currently configured Gateways
 
