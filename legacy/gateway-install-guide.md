@@ -1,11 +1,10 @@
 # Gateway Installation and Maintenance Guide
 
-> Version 2.2
-
 ## Document Controls
 
-### Revision History
+> Version 2.2
 
+### Revision History
 
 Version | Date | Author | Notes
 ---------|----------|---------|--------
@@ -14,6 +13,40 @@ Version | Date | Author | Notes
  2.1 | 29/07/14 | JH | Copy to new company template
  2.2 | 02/07/20 | LC | Clarification on licd and netprobe in installation directory structures
 
+## Contents
+
+<!-- TOC -->
+
+* [Introduction](#introduction)
+    * [Purpose](#purpose)
+    * [Audience](#audience)
+        * [Background](#background)
+* [Implementation Steps](#implementation-steps)
+* [Gateway Implementation](#gateway-implementation)
+    * [Installation](#installation)
+        * [Base Directory](#base-directory)
+        * [Gateway Template Installation](#gateway-template-installation)
+        * [Gateway Binary Installation](#gateway-binary-installation)
+        * [${ITRShome}/bin directory](#itrshomebin-directory)
+    * [Gateway Creation](#gateway-creation)
+        * [Gateway Naming Standards](#gateway-naming-standards)
+        * [Gateway Control rc File Details](#gateway-control-rc-file-details)
+        * [Gateway Control File Details](#gateway-control-file-details)
+        * [Gateway Script Examples](#gateway-script-examples)
+        * [Gateway Script Create Functionality](#gateway-script-create-functionality)
+    * [Include File Implementation](#include-file-implementation)
+        * [GLOBAL_Administration Include File Details](#global_administration-include-file-details)
+        * [GLOBAL_Administration Include File Functionality](#global_administration-include-file-functionality)
+        * [GLOBAL_Authentication Include File Details](#global_authentication-include-file-details)
+        * [GLOBAL_Authentication Include File Functionality](#global_authentication-include-file-functionality)
+        * [GLOBAL_Infrastructure Include File Details](#global_infrastructure-include-file-details)
+        * [GLOBAL_Infrastructure Include File Functionality](#global_infrastructure-include-file-functionality)
+    * [Main Gateway File Implementation](#main-gateway-file-implementation)
+* [Adding Additional Include Files](#adding-additional-include-files)
+* [Gateway Administration](#gateway-administration)
+    * [Stopping, Starting and Deleting Gateways](#stopping-starting-and-deleting-gateways)
+
+<!-- /TOC -->
 
 ## Introduction
 

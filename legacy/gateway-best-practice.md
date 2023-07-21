@@ -1,10 +1,10 @@
 # Gateway Best Practice Guide
 
+## Document Controls
+
 > Version 2.1
 > 
-> **30 July 2014**
-
-## Document Controls
+> 30<sup>th</sup> July 2014
 
 ### Revision History
 
@@ -12,6 +12,42 @@ Version | Date | Author | Notes
 ---------|----------|---------|--------
  1.0 | 19/04/13 | JH | Initial Version
  1.1 | 29/07/14 | JH | Copy to new company template
+
+## Contents
+
+<!-- TOC -->
+
+* [Introduction](#introduction)
+    * [Purpose](#purpose)
+    * [Audience](#audience)
+    * [Background](#background)
+* [Implementation Standards](#implementation-standards)
+    * [Main/include File Usage](#maininclude-file-usage)
+        * [Include File Usage](#include-file-usage)
+        * [Include File Disadvantages](#include-file-disadvantages)
+        * [Include File Naming and Priorities](#include-file-naming-and-priorities)
+        * [Include File Rule Priorities](#include-file-rule-priorities)
+    * [Attribute Structure and Naming](#attribute-structure-and-naming)
+        * [Location Attributes](#location-attributes)
+        * [Environment Attributes](#environment-attributes)
+        * [Descriptive Attributes](#descriptive-attributes)
+        * [Exceptions](#exceptions)
+    * [Group Structure for Common Sections](#group-structure-for-common-sections)
+        * [Probes](#probes)
+        * [Types](#types)
+        * [Samplers](#samplers)
+        * [Sampler Includes](#sampler-includes)
+        * [Static Variables](#static-variables)
+        * [Rules](#rules)
+    * [Authentication](#authentication)
+    * [Using Actions or Alerting](#using-actions-or-alerting)
+        * [Actions](#actions)
+        * [Alerting](#alerting)
+    * [Principals of Overriding Shared Configuration](#principals-of-overriding-shared-configuration)
+    * [Gateway Naming Convention](#gateway-naming-convention)
+* [Summary](#summary)
+
+<!-- /TOC -->
 
 ## Introduction
 

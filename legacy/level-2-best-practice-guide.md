@@ -1,18 +1,48 @@
 # Geneos Level 2 Monitoring Best Practice Guide
 
+## Document Controls
+
 > Version 1.2
 > 
-> **31 July 2014**
+> 31<sup>st</sup> July 2014
 
-**Document Controls**
-
-**Revision History**
+### Revision History
 
 Version | Date | Author | Notes
 ---------|----------|---------|--------
  1.0 | 05/12/2013 | JH | First Draft
  1.1 | 08/01/2014 | JH | Revision after initial feedback
  1.2 | 31/07/2014 | JH | Copy to new company template
+
+## Contents
+
+<!-- TOC -->
+
+* [Introduction](#introduction)
+    * [Purpose](#purpose)
+    * [Scope](#scope)
+    * [Audience](#audience)
+    * [Background](#background)
+* [Process Monitoring](#process-monitoring)
+    * [Process Monitoring Usage](#process-monitoring-usage)
+        * [Single Instance Processes](#single-instance-processes)
+        * [Active – Passive Processes](#active--passive-processes)
+        * [Active – Active Processes](#active--active-processes)
+    * [Process Monitoring Configuration](#process-monitoring-configuration)
+        * [Single Instance Processes](#single-instance-processes)
+        * [Clustered Processes](#clustered-processes)
+* [Log File Monitoring](#log-file-monitoring)
+    * [Log File Monitoring Usage](#log-file-monitoring-usage)
+    * [Log File Monitoring Best Practices](#log-file-monitoring-best-practices)
+        * [Dealing With Issues During Initial Improvement Process](#dealing-with-issues-during-initial-improvement-process)
+    * [Log File Monitoring Configuration](#log-file-monitoring-configuration)
+        * [General Configuration](#general-configuration)
+        * [Fine-Tuning Log File Monitoring](#fine-tuning-log-file-monitoring)
+* [Appendix](#appendix)
+    * [Process Configuration](#process-configuration)
+        * [Processes Rules](#processes-rules)
+
+<!-- /TOC -->
 
 ## Introduction
 

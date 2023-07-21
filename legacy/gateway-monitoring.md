@@ -1,16 +1,72 @@
 # Geneos Gateway Monitoring
 
+## Document Controls
+
 > Version 3.0
 >
 > 4<sup>th</sup> September 2014
 
-## Version History
+### Revision History
 
 Version | Author | Notes
 ---------|----------|---------
  1.0 | CB | First cut
  2.0 | OE | Rewritten as generic document, with Sybase support
  3.0 | RG | Redesign using gateway sharing
+
+## Contents
+
+<!-- TOC -->
+
+* [Introduction](#introduction)
+* [Purpose](#purpose)
+* [Scope](#scope)
+* [Intended Audience](#intended-audience)
+* [Architecture](#architecture)
+* [Monitoring Gateway Deliverables](#monitoring-gateway-deliverables)
+    * [Primary Gateway Metrics](#primary-gateway-metrics)
+    * [Secondary Gateway Metrics](#secondary-gateway-metrics)
+    * [Active Gateway Metrics](#active-gateway-metrics)
+* [Monitoring Gateway Dashboard](#monitoring-gateway-dashboard)
+* [Monitored Gateway Configuration](#monitored-gateway-configuration)
+    * [Netprobe configuration](#netprobe-configuration)
+    * [Samplers](#samplers)
+        * [Gateway Data](#gateway-data)
+        * [Gateway License Usage](#gateway-license-usage)
+    * [Exported Data](#exported-data)
+    * [KnowledgeBase](#knowledgebase)
+* [Monitoring Gateway Configuration](#monitoring-gateway-configuration)
+    * [Includes](#includes)
+    * [Probes](#probes)
+    * [Managed Entity Groups](#managed-entity-groups)
+    * [Managed Entities](#managed-entities)
+    * [Sampler Groups](#sampler-groups)
+    * [Samplers](#samplers)
+    * [Rules](#rules)
+        * [DB Connection Status](#db-connection-status)
+        * [Secondary GW Connection Status](#secondary-gw-connection-status)
+        * [DB Logging Enabled](#db-logging-enabled)
+        * [HotStandby Enabled](#hotstandby-enabled)
+        * [HotStandby Role](#hotstandby-role)
+        * [License Days Remaining](#license-days-remaining)
+        * [Instance Count](#instance-count)
+        * [Gateway CPU](#gateway-cpu)
+        * [Gateway Memory](#gateway-memory)
+        * [Gateway Connection Status](#gateway-connection-status)
+        * [Imported Data](#imported-data)
+* [Process to add new Gateway to the monitoring gateway](#process-to-add-new-gateway-to-the-monitoring-gateway)
+    * [Create the Probe](#create-the-probe)
+    * [Create the Managed Entity Groups](#create-the-managed-entity-groups)
+    * [Create the Managed Entities](#create-the-managed-entities)
+    * [Configure Imported data](#configure-imported-data)
+* [Monitored Gateway XML](#monitored-gateway-xml)
+    * [Appendix A – GLOBAL_Administration.xml](#appendix-a--global_administrationxml)
+    * [Appendix B – Exported data](#appendix-b--exported-data)
+    * [Appendix C – Knowledge base](#appendix-c--knowledge-base)
+* [Monitoring Gateway XML](#monitoring-gateway-xml)
+    * [Appendix D - Gateway Setup File](#appendix-d---gateway-setup-file)
+
+<!-- /TOC -->
 
 ## Introduction
 
