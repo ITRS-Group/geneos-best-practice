@@ -92,13 +92,15 @@ san       hdci-ecr1adh01a      localhost  A     7103  netprobe/active_prod:6.5.0
 
 Here you can see columns for:
 
-* `Type` - The component type
-* `Name` - The instance name
-* `Host` - The host the instance is configured on
-* `Flags` - Flags that show if the instance is `P`rotected, `A`uto-start, `D`isabled
-* `Port` - The TCP port the instance is configured to listen on
-* `Version` - The component package type, base name and underlying version. For the `san` type the `netprobe/` prefix tells you that the underlying release is a normal Netprobe
-* `Home` - The working (run time) directory
+| Column | Descriptions |
+|--------|--------------|
+| `Type` | The component type |
+| `Name` | The instance name |
+| `Host` | The host the instance is configured on |
+| `Flags` | Flags that show if the instance is `P`rotected, `A`uto-start, `D`isabled, `T`LS Enabled |
+| `Port` | The TCP port the instance is configured to listen on |
+| `Version` | The component package type, base name and underlying version. For the `san` type the `netprobe/` prefix tells you that the underlying release is a normal Netprobe |
+| `Home` | The working (run time) directory |
 
 ### `geneos status` / `geneos ps`
 
@@ -117,10 +119,12 @@ The output looks similar to the `list` / `ls` command but with some important di
 
 The first three - `Type`, `Name` and `Host` - and last two columns - `Version` and `Home` have the same meaning, but then we also have:
 
-* `PID` - The PID (Process ID) of the running process
-* `Ports` - The actual TCP ports the process is listening on
-* `User` and `Group` - The User and Group of the user running the process
-* `Starttime` - The process start time
+| Column | Descriptions |
+|--------|--------------|
+| `PID` | The PID (Process ID) of the running process |
+| `Ports` | The actual TCP ports the process is listening on |
+| `User` and `Group` | The User and Group of the user running the process |
+| `Starttime` | The process start time |
 
 Remember that you can also limit the results by giving additional arguments on the command line, for example:
 
@@ -214,7 +218,7 @@ With no other arguments the command will download and install the latest availab
 $ geneos package install netprobe -u email@example.com
 Password:
 geneos-netprobe-6.6.0-linux-x64.tar.gz 100% |███████████████████████████████████████████████████| (394/394 MB, 27 MB/s)         
-installed "geneos-netprobe-6.6.0-linux-x64.tar.gz" to "/home/peter/geneos/packages/netprobe/6.6.0"
+installed "geneos-netprobe-6.6.0-linux-x64.tar.gz" to "/opt/geneos/packages/netprobe/6.6.0"
 ```
 
 The command has quite a few options, which you can see in the main documentation. To mention common flags, the `--local` / `-L` lets you install from a local directory or files, for when you cannot connect directly to the Internet from your server. You can also specify a URL, if you have releases located on internal web site.
@@ -232,6 +236,23 @@ The `geneos package update` command lets you control when instances are updated,
 
 
 ### `geneos package uninstall`
+
+Toe remove old releases and to clean-up the downloaded release files you can use `geneos package uninstall`. Without any options the command will only remove older, unused releases and all downloaded archives. The command will not remove the latest release for any component type or any release that is in use by a named instance. It will also update any unused symbolic versions to the latest available release so that it can remove older releases.
+
+```bash
+$ geneos package uninstall
+$ ./geneos package uninstall
+removed "/opt/geneos/packages/downloads/geneos-gateway-5.14.3-linux-x64.tar.gz"
+removed "/opt/geneos/packages/downloads/geneos-gateway-6.3.1-linux-x64.tar.gz"
+netprobe "localhost" is marked protected and uses version 6.5.0, skipping
+licd "perm" is marked protected and uses version 6.5.0, skipping
+gateway "Demo Gateway" is marked protected and uses version 6.5.0, skipping
+removed gateway release 5.14.3 in localhost:/opt/geneos/packages/gateway
+removed gateway release 6.3.1 in localhost:/opt/geneos/packages/gateway
+gateway "Demo Gateway@ubuntu" is marked protected and uses version 6.5.0, skipping
+removed gateway release 5.14.3 in ubuntu:/opt/geneos/packages/gateway
+removed gateway release 6.3.1 in ubuntu:/opt/geneos/packages/gateway
+```
 
 ## Manage Instances
 
