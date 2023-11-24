@@ -295,13 +295,19 @@ netprobe "myProbe" added, port 7114
 
 The `geneos deploy` command combines `geneos add` and `geneos package install` in an intelligent way to allow you to implement a working Geneos component in a single command. This is especially useful for scripting and automation.
 
+### `geneos set` and `geneos unset`
 
+The instances you create and manage may, over time, need settings changed. Those settings that are not automatically managed by commands can be updated with these commands. You can change simple parameters, which are KEY=VALUE pairs and also more complex parameters like lists of environment variables and more. 
 
 ### `geneos delete`
 
 A command that you will not use very often is the `geneos delete` command. 
 
+### `geneos rebuild`
 
+Certain Geneos components use configuration files; the Gateway and Self-Announcing / Floating Netprobes. When you create a new instance of these types they also have default configuration files created for them. These files are built from templates and have the details filled in depending on the instance configuration, for example the name and port numbers.
+
+If you change any instance settings then you may need to rebuild the configuration files to reflect these changes.
 
 ### `geneos clean`
 
