@@ -1,4 +1,4 @@
-# Geneos Best Practice Configuration Guide
+# Geneos Best Practice - Configuration
 
 ## Introduction
 

@@ -1,51 +1,30 @@
-# Geneos Best Practice Installation Guide
+# Geneos Best Practices - Installation
 
-> Version: v0.1.0
+> Version: v0.1.1
 >
-> Published: 2023-11-xx
+> Published: 2024-xx-xx
 >
-> ✔ This guide was written using Geneos 6.5.0 and the cordial tools v1.10.4
-
-
-
+> ✔ This guide was written using Geneos 6.6.0 and the cordial v1.12.0
 
 ## Introduction
 
-
-
-
-
 Geneos is an established and mature enterprise monitoring platform.
 
-This guide is written by the ITRS Professional Service team and contains our experiences over many years.
+This guide has been written by the ITRS Professional Service team and shares our experiences over many years installing and managing Geneos.
 
-This guide describes how to install a Geneos system, how to name components 
+This guide will show you how to install a Geneos system.
 
-The instructions here are not intended to be prescriptive and neither are they an attempt to describe the only way to do it.
-
-Previous versions of this document ...
+The instructions here are not intended to be prescriptive and neither are they an attempt to describe the only way to achieve your goals for Geneos.
 
 This guide assumes a traditional, non-containerised installation either in VMs or bare metal servers. For containers see xxx.
 
-
-
-
 ## Getting Started
-
-
-
-
-
-
 
 The initial installation of Geneos can be quick and simple. Don't be discouraged by the volume of options, terminology and concepts. We have written these guides to make things as straight forward as possible.
 
+### Demo System
 
-
-
-### Geneos Demo System
-
-The most basic Geneos system - running on a Linux VM or host or in a WSL session, consists of a Gateway, a Netprobe to collect data and an Active Console to view the state of the system. You can install a "demo" system without a licence file and be up and running in minutes. For this you do not need to create a special user account or locate an installation directory - the default is to use your account and create a `geneos` directory in your home area.
+The most basic Geneos system - typically running on a Linux server or VM or even in a WSL session, consists of a Gateway, a Netprobe to collect data and an Active Console to view the state of the system. You can install a "demo" system without a licence file and be up and running in minutes. For this you do not need to create a special user account or locate an installation directory - the default is to use your account and create a `geneos` directory in your home area.
 
 First, download and install the `geneos` utility, like this:
 
@@ -75,14 +54,11 @@ Finally, download and run the Active Console on your desktop. If you are running
 
 ⚠ Note: A Geneos "demo" system doesn't require a licence file but is subject to a number of restrictions. You can [read more here](https://devdocs.itrsgroup.com/docs/geneos/current/Gateway_Reference_Guide/gateway_licensing.htm#DemoMode).
 
-### Geneos For Real
+### Full Installation
 
-Once you have experienced the basic functionality of Geneos through a demo system it's time to plan and install Geneos for real. For this you will need to plan where the various components will be installed, the connectivity between them and also have a valid licence file.
-
-
+Once you have seen the basic functionality of Geneos through a demo system it's time to plan and install Geneos for real. For this you will need to plan where the various components will be installed, the connectivity between them and also have a valid licence file.
 
 Checklist:
-
 
 * Prepare system(s)
     * Prerequisites

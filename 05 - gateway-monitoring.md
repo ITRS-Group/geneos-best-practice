@@ -1,4 +1,4 @@
-# Geneos Best Practice Gateway Monitoring Guide
+# Geneos Best Practices - Gateway Monitoring
 
 Monitor the monitoring
 

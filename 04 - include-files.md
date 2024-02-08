@@ -1,4 +1,4 @@
-# Geneos Best Practice - Guidelines for Include Files
+# Geneos Best Practices - Include Files
 
 There are three common styles of Geneos Gateway include files:
 
