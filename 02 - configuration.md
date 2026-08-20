@@ -1,18 +1,17 @@
-# Geneos Best Practice - Configuration
+# Geneos Good Practice - Configuration
 
 ## Introduction
 
 ### ITRS Monitoring Maturity Model
 
-You may have seen references to the ITRS Monitoring Maturity Model. This layered approach looks at the "type and use" of the monitoring in your organisation. These Best Practice guidelines concentrate on Levels 1 and 2 and we introduce a supplementary level 0 related to the Geneos platform itself.
+You may have seen references to the ITRS Monitoring Maturity Model. This layered approach looks at the "type and use" of the monitoring in your organisation. These Good Practice guidelines concentrate on Levels 1 and 2 and we introduce a supplementary level 0 related to the Geneos platform itself.
 
-* Level 0 - Geneos Self-Monitoring
+* Level 0 - Geneos Estate / Self-Monitoring
 * Level 1 - Infrastructure
 * Level 2 - Basic Application
 * Level 3 - Advanced Application
 * Level 4 - End-to-End
 * Level 5 - Business Activity
-
 
 ## Standard Include Files
 
@@ -35,17 +34,17 @@ Things in Geneos that should have clear, sensible and (generally) unique names:
 
 * Probes
 
-    Each Netprobe is normally identified using a combination of the hostname and either it's function or the port it listens on. Normally probe names are not visible to end-users.
+  Each Netprobe is normally identified using a combination of the hostname and either it's function or the port it listens on. Normally probe names are not visible to end-users.
 
 * Managed Entities
 
-    Managed Entities form the core collection object for Geneos monitoring. Each Managed Entity should be uniquely named across your whole monitored estate.
+  Managed Entities form the core collection object for Geneos monitoring. Each Managed Entity should be uniquely named across your whole monitored estate.
 
 * Types and Samplers
 
-    Types represent related collections of samplers and their names should reflect the overall objective of that monitoring. Sampler names must be unique on a particular Gateway but more than one instance of a Sampler can be used in a Managed Entity as long as you use Types to distinguish them. This is however rare.
+  Types represent related collections of samplers and their names should reflect the overall objective of that monitoring. Sampler names must be unique on a particular Gateway but more than one instance of a Sampler can be used in a Managed Entity as long as you use Types to distinguish them. This is however rare.
 
-    Both Types and Samplers are often shared between Gateways through Include Files and because of this their names should be clear and meaningful given the context of the monitoring distributed over those Gateways.
+  Both Types and Samplers are often shared between Gateways through Include Files and because of this their names should be clear and meaningful given the context of the monitoring distributed over those Gateways.
 
 ### Grouping and Hierarchies
 
@@ -53,7 +52,7 @@ Things in Geneos that should have clear, sensible and (generally) unique names:
 
 ### Attributes
 
-See [Attributes](./02%20-%20configuration%20-%20attributes.md)
+See [Attributes](<./02b - configuration - attributes.md>)
 
 ## Include Files
 
@@ -124,7 +123,7 @@ All Types should have default for individual variables or a default environment.
 
 Active Times allow you control your monitoring across the working day and over wider periods. You can use them to help "monitor by exception" and to reduce noise. Not many people are interested in events during maintenance periods or at weekends, just as long as their systems are back online and functioning for the start of the day.
 
-### When To NOT Use Active Times
+### When NOT To Use Active Times
 
 * File-content based samplers
 

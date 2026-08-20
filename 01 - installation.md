@@ -1,22 +1,23 @@
-# Geneos Best Practices - Installation
+# Geneos Good Practices - Installation
 
-> Version: v0.1.1
+> Version: v0.2
 >
-> Published: 2024-xx-xx
->
-> ✔ This guide was written using Geneos 6.6.0 and the cordial v1.12.0
+> Published: 2025-07-01
+
+>[!NOTE]
+>This guide was written using Geneos 7.4.2 and the cordial v1.21.0
 
 ## Introduction
 
-Geneos is an established and mature enterprise monitoring platform.
+Geneos is a well established, mature enterprise monitoring platform.
 
 This guide has been written by the ITRS Professional Service team and shares our experiences over many years installing and managing Geneos.
 
 This guide will show you how to install a Geneos system.
 
-The instructions here are not intended to be prescriptive and neither are they an attempt to describe the only way to achieve your goals for Geneos.
+The instructions here are not intended to be either definitive, neither are they an attempt to describe the only way to achieve your goals for Geneos.
 
-This guide assumes a traditional, non-containerised installation either in VMs or bare metal servers. For containers see xxx.
+This guide assumes a traditional, non-containerised installation either on VMs or bare metal servers. For containers see xxx.
 
 ## Getting Started
 
@@ -34,12 +35,13 @@ install here
 
 Next, use the `geneos` utility to download and install the basic Geneos components and run them.
 
-⚠ Note: You will need to have [registered for an account](https://www.itrsgroup.com/?register=1) to download the software packages directly to your Geneos server. If you cannot access our download site directly then you can also download the required packages and install from a local directory instead. See the [documentation](https://github.com/ITRS-Group/cordial/blob/main/tools/geneos/docs/geneos_init_demo.md) for more info for the `-A` option.
+>[!NOTE]
+>You will need to have [registered for an account](https://www.itrsgroup.com/?register=1) to download the software packages. If you cannot access our download site directly then you can also download the required packages and install from a local directory instead. See the [documentation](https://github.com/ITRS-Group/cordial/blob/main/tools/geneos/docs/geneos_init_demo.md) for more info for the `-A` option.
 
 Then do this (and change the destination directory if you want to):
 
 ```bash
-$ geneos init demo -C -u youremail@example.com
+$ geneos init demo -MT -u youremail@example.com
 Geneos Directory (default "/home/geneos"): <RETURN>
 Password: ********
 ```
@@ -52,40 +54,40 @@ Finally, download and run the Active Console on your desktop. If you are running
 
 (screenshot here)
 
-⚠ Note: A Geneos "demo" system doesn't require a licence file but is subject to a number of restrictions. You can [read more here](https://devdocs.itrsgroup.com/docs/geneos/current/Gateway_Reference_Guide/gateway_licensing.htm#DemoMode).
+>[!NOTE]
+>A Geneos "demo" system doesn't require a licence file but is subject to a number of restrictions. You can [read more here](https://devdocs.itrsgroup.com/docs/geneos/current/Gateway_Reference_Guide/gateway_licensing.htm#DemoMode).
 
 ### Full Installation
 
-Once you have seen the basic functionality of Geneos through a demo system it's time to plan and install Geneos for real. For this you will need to plan where the various components will be installed, the connectivity between them and also have a valid licence file.
+Once you have familiarised yourself with the basic functionality of Geneos through the demo system above, it's time to plan and install Geneos for real. For this you will need to plan where the various components will be installed, the connectivity between them and also have a valid licence file.
 
 Checklist:
 
 * Prepare system(s)
-    * Prerequisites
-    * User account
-    * Install directory
-    * Licencing
+
+  * Prerequisites
+  * User account
+  * Install directory
+  * Licencing
 
 * Plan
-    * Initial components
-    * Naming
-    * Netprobes
-        * Normal
-        * SANs
-    * Network Access
-    * Shared Configuration
-    * Authentication
-    * Secure Communications / Certificates
+  * Initial components
+  * Naming
+  * Netprobes
+    * Normal
+    * SANs
+  * Network Access
+  * Shared Configuration
+  * Authentication
+  * Secure Communications / Certificates
 
 * Download `geneos`
-    * Install
-    * Initialise
-    * Deploy
+  * Install
+  * Initialise
+  * Deploy
 
 * Desktop Access
-    * Active Console
-
-
+  * Active Console
 
 ## Installation Environment
 
@@ -100,7 +102,7 @@ We will use the account name `geneos` throughout this guide in directory listing
 If you are deploying Netprobes on Windows systems then you should review the requirements for access before implementing any new account for the Windows Service which normally runs as `Local System`.
 
 ```bash
-$ sudo useradd -m geneos
+sudo useradd -m geneos
 ```
 
 ### Choosing the Geneos Directory
@@ -141,8 +143,8 @@ Geneos Component | TCP Port | Description
 
 These ports, or whichever you choose to use, should be opened for access through any server or network firewall to the systems that will host each component type.
 
-⚠ Note: If you plan to use Database Logging then you must also ensure that both your Gateways and all user's Active Consoles have direct access to the database server. Database queries from the Active Console are made directly and not via the Gateway.
-
+>{!NOTE]
+>If you plan to use Database Logging then you must also ensure that both your Gateways and all user's Active Consoles have direct access to the database server. Database queries from the Active Console are made directly and not via the Gateway.
 
 ### Download and Install `geneos`
 
@@ -160,7 +162,7 @@ or, if your system doesn't have `wget`
 
 ```bash
 cd /tmp
-curl -OL wget https://github.com/ITRS-Group/cordial/releases/latest/download/geneos
+curl -OL https://github.com/ITRS-Group/cordial/releases/latest/download/geneos
 chmod +x geneos
 sudo mv geneos /usr/local/bin/
 hash -r
@@ -172,7 +174,7 @@ You can test by checking the version:
 
 ```bash
 $ geneos version
-geneos version v1.8.0
+geneos version v1.21.0
 ```
 
 The version at the link above will work for most users but is statically linked so cannot load shared libraries required if your user accounts are in a directory such as LDAP or AD. In this case please see the release for alternative binary downloads.

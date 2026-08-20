@@ -8,4 +8,5 @@ Availability
 
 Coverage
 
-The absence of monitoring is itself an event - check components running and reachable at all times
+The absence of monitoring is itself an event - check components running and reachable at all times. Use Expect Rows for summary views.
+

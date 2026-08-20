@@ -1,5 +1,82 @@
 # Geneos Best Practices - Include Files
 
+(Align with attributes)
+
+Types:
+
+* Functional
+  * Read-only
+  * Upgradeable
+  * Infra, Basic App, Geneos self-monitoring
+  * Specific tech solutions
+  * Naming: ORG.LEVEL.FUNCTION.xml
+  * Located in `../../includes/...`
+
+* Shared configuration
+  * Editable
+  * Shared, reloadable
+  * Should match base includes (like above) one-for-one
+  * Located in `../../shared/...`
+
+* Local configuration
+  * Editable
+  * Separate file(s) for auth access and partitioning functionality
+  * Located in gateway working directory
+
+* Templates
+  * Examples
+  * To be copied before editing
+  * Some automation to generate
+  * Located in other repo / directory, not directly loaded by gateways
+
+* Metadata
+  * Read-only
+  * Generated, reloadable
+  * Located in gateway working directory / URL
+
+...
+
+Locations:
+
+All paths should be relative where possible to allow moving of configuration files. Or URLs.
+
+Priorities:
+
+Priorities should be grouped by monitoring level (e.g. 1000, 2000), all includes that do NOT override others (e.g. local overrides) should be high end of the group.
+
+Authentication/Access:
+
+Auth settings should protect read-only files from all but Administrators or specific local user types.
+
+Reloading: On but with Active Times advised for production
+
+General Rules:
+
+* Probes and Entities should only appear in main or local include, except virtual probes - but even then beware uniqueness constraints
+* Use built-in features, like self-monitoring, where possible and configure in main or local include
+* Names that appear in XPaths or Action/Effect env variables should be meaningful (e.g. probes, samplers, type etc.) and consistent
+* Variables should in Environments where possible
+* Variables should NOT be used to control all settings, just key ones
+* All "macro" variables will be predefined in generated includes like instance.setup.xml
+
+Writing Includes / main setup:
+
+* Use (matching) groups to categorise different items, base on Entity hierarchies where appropriate
+* Design for overriding or variables but not both
+* Use comments to explain set-up, especially for templates
+* Sampler Includes should be used for the 4 common plugins to consolidate monitored data, for each level and function
+* Don't create lots of small files for the sake of it. Create units of functionality
+* Use include merging rules to build empty group hierarchies like Entities that can be used as templates in config includes
+
+Sharing / Publishing
+
+* All functional includes should also create shared datasets with consistent names
+* Disable publishing for samplers that aggregate data, e.g. dashboard views
+
+Editing and Hot Standby Sync
+
+* All non-local includes should be edited in only one gateway and this should also be the only gateway that syncs files, unless the sync is done through VCS or URLs
+
 There are three common styles of Geneos Gateway include files:
 
 1. **Monitoring Modules**
@@ -27,7 +104,10 @@ There are three common styles of Geneos Gateway include files:
     2. For administrative convenience, to make it easier to manage defined monitoring especially in a large environment
 
 
-## Read-Only
+
+
+
+## Previous
 
 * Enable/Disable + Variables
 
