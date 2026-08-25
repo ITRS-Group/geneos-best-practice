@@ -81,11 +81,11 @@ Attributes can be set in a number of places in Geneos:
 
 1. Self-Announcing Netprobe configuration
 
-    A Self-Announcing Netprobe ("SAN") can declare its own entities and set attributes on them. This is done in the SAN configuration file, which is read by the Netprobe when it starts up.
+    A Self-Announcing Netprobe ("SAN") can declare its own entities and set attributes on them.
 
 1. Dynamic Entities
 
-    Metrics being injegted into Geneos from external sources can be used to create Dynamic Entities. These entities are created by the gateway when it receives the data and they can have attributes set on them in two ways:
+    Metrics being ingested into Geneos from external sources can be used to create Dynamic Entities. These entities are created by the gateway when it receives the data and they can have attributes set on them in two ways:
 
     * Dynamic Mapping Groups
     * Dynamic Mappings
