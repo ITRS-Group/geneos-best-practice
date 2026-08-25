@@ -1,14 +1,14 @@
 # Geneos Best Practice - Configuration - Attributes
 
-Attributes are name/value labels that are used with, and only apply to, Managed Entities ("entities") to categorise, group and filter those entities quickly and efficiently. Setting and using attributes should _always_ be preferred over using wildcard matching of entity names. Ensuring their consistent use across your organisation's monitored estate is crucial to making the best use of Geneos.
+Attributes are name/value labels that are used with, and only apply to, Managed Entities ("entities") to label, group and filter those entities quickly and efficiently. Setting and using attributes should _always_ be preferred over using wildcard matching of entity names. Ensuring their consistent use across your organisation's monitored estate is crucial to making the best use of Geneos.
 
 Attributes can be set on Managed Entity Groups and on individual Managed Entities. They can also be set on Dynamic Mapping Groups and Dynamic Mappings, which are used to create Dynamic Entities. Attributes are inherited from the Managed Entity Group to the Managed Entity and from the Dynamic Mapping Groups to Dynamic Mappings and then to each Dynamic Entity created.
 
 ## Basic Attributes
 
-To get you going, you should aim to use the attributes below, starting with the primary list and then, as required, the secondary and tertiary ones. A more complete list of suggested names and their uses follows in the next section.
+To get you going, you should aim to use the attributes below, starting with the primary list and then, as required, the secondary and tertiary ones. A more extensive list of suggested names and their uses follows in the next section.
 
-Don't overload an entity with too many attributes, as this can make it difficult to manage and maintain you gateways. Use only those attributes that are relevant to your estate and the way you want to group and filter your entities. Use Annotations for any additional name/value pairs that are only used for passing data to Actions and Effects and not for grouping and filtering.
+Don't be tempted to overload an entity with too many attributes, as this can make it difficult to manage and maintain your gateways. Use only those attributes that are relevant to the way you want to label, group and filter your entities. Use Annotations for any additional name/value pairs that are only used for passing data to Actions and Effects and not for grouping and filtering.
 
 >[!IMPORTANT]
 >Attribute names and values are case-sensitive and you need to keep this in mind to ensure the consistency required across your growing Geneos estate.
@@ -52,10 +52,10 @@ Attributes have a number of uses:
 
 1. Passed as parameters to Actions and Effects
 
-   When the gateway runs either an action from a rule, or an effect as the result of an alert firing, it passes a set of name/value pairs that contain information about the data item that triggered it, including internal parameters and all the attributes that are set on the entity.
+    When the gateway runs either an action from a rule, or an effect as the result of an alert firing, it passes a set of name/value pairs that contain information about the data item that triggered it, including internal parameters and all the attributes that are set on the entity.
 
-   >[!NOTE]
-   >Another Geneos feature called Annotations means that you do not have to overload entities with name/value pairs that are only used for Actions/Effects. Annotations are a separate set of name/value pairs that are only passed to Actions and Effects and not for any other purpose. Annotations can also be defined at a more granular level than entities.
+    >[!NOTE]
+    >Another Geneos feature called Annotations means that you do not have to overload entities with extra name/value pairs that are only used for Actions and Effects. Annotations are a separate set of configurable name/value pairs that are only passed to Actions and Effects and not for anything else. Annotations can also be defined at a more granular level than entities.
 
 1. Dimensions passed to ITRS Analytics
 
