@@ -54,8 +54,7 @@ Attributes have a number of uses:
 
     When the gateway runs either an action from a rule, or an effect as the result of an alert firing, it passes a set of name/value pairs that contain information about the data item that triggered it, including internal parameters and all the attributes that are set on the entity.
 
-    >[!NOTE]
-    >Another Geneos feature called Annotations means that you do not have to overload entities with extra name/value pairs that are only used for Actions and Effects. Annotations are a separate set of configurable name/value pairs that are only passed to Actions and Effects and not for anything else. Annotations can also be defined at a more granular level than entities.
+    > NOTE: Another Geneos feature called Annotations means that you do not have to overload entities with extra name/value pairs that are only used for Actions and Effects. Annotations are a separate set of configurable name/value pairs that are only passed to Actions and Effects and not for anything else. Annotations can also be defined at a more granular level than entities.
 
 1. Dimensions passed to ITRS Analytics
 
@@ -76,9 +75,9 @@ Attributes can be set in a number of places in Geneos:
 
     This is the most common way to set attributes and is the recommended approach for most users.
     
-    You should create a hierarchy of Managed Entity Groups that reflect your chosen attributes, setting at least one primary attriubute on each group and the group name should be the value of that attribute. For example:
+    You should create a hierarchy of Managed Entity Groups that reflect your chosen attributes, setting at least one primary attribute on each group and the group name should be the value of that attribute. For example:
 
-
+    ...
 
 1. Self-Announcing Netprobe configuration
 
