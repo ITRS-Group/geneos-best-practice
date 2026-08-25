@@ -37,68 +37,78 @@ Don't be tempted to overload an entity with too many attributes, as this can mak
 
 Attributes have a number of uses:
 
-1. State Tree hierarchy in Active Console via the View Path setting
-
-   The View Path in the Active Console allows the user to build their own hierarchy of entities in the State Tree window. Attribute names are used to identify the levels and their order, while the values are the names of the nodes that appear in the State Tree. Because the Active Console can connect to and aggregate the data from multiple gateways at once, the use of the the view path becomes the principal way to merge the entities from all of the connected gateways in a meaningful way.
-
+1. State Tree Hierarchy in Active Console via the View Path setting
 1. Fast filtering of XPath targets
-
-   Geneos uses XPaths extensively to select data from the live directory of monitored data. You may already have seen these used in the following configuration sections:
-
-   * Rules
-   * Commands
-   * User and Role Permissions
-   * Dashboard modifiers
-
 1. Passed as parameters to Actions and Effects
-
-    When the gateway runs either an action from a rule, or an effect as the result of an alert firing, it passes a set of name/value pairs that contain information about the data item that triggered it, including internal parameters and all the attributes that are set on the entity.
-
-    > NOTE: Another Geneos feature called Annotations means that you do not have to overload entities with extra name/value pairs that are only used for Actions and Effects. Annotations are a separate set of configurable name/value pairs that are only passed to Actions and Effects and not for anything else. Annotations can also be defined at a more granular level than entities.
-
 1. Dimensions passed to ITRS Analytics
 
-   When the Gateway sends data to ITRS Analytics ("IAX"), it passes all attributes as dimensions, allowing the data to be grouped and filtered in IAX by those dimensions.
+### State Tree Hierarchy in Active Console via the View Path setting
+
+The View Path in the Active Console allows the user to build their own hierarchy of entities in the State Tree window. Attribute names are used to identify the levels and their order, while the values are the names of the nodes that appear in the State Tree. Because the Active Console can connect to and aggregate the data from multiple gateways at once, the use of the the view path becomes the principal way to merge the entities from all of the connected gateways in a meaningful way.
+
+### Fast filtering of XPath targets
+
+Geneos uses XPaths extensively to select data from the live directory of monitored data. You may already have seen these used in the following configuration sections:
+
+* Rules
+* Commands
+* User and Role Permissions
+* Dashboard modifiers
+
+### Passed as parameters to Actions and Effects
+
+When the gateway runs either an action from a rule, or an effect as the result of an alert firing, it passes a set of name/value pairs that contain information about the data item that triggered it, including internal parameters and all the attributes that are set on the entity.
+
+>[!NOTE]
+>Another Geneos feature called Annotations means that you do not have to overload entities with extra name/value pairs that are only used for Actions and Effects. Annotations are a separate set of configurable name/value pairs that are only passed to Actions and Effects and not for anything else. Annotations can also be defined at a more granular level than entities.
+
+### Dimensions passed to ITRS Analytics
+
+When the Gateway sends data to ITRS Analytics ("IAX"), it passes all attributes as dimensions, allowing the data to be grouped and filtered in IAX by those dimensions.
 
 ## Sources
 
 Attributes can be set in a number of places in Geneos:
 
 1. Gateway configuration
-
-    In the main gateway configuration file, attributes can be set on the following elements:
-
-    * Managed Entity Groups
-    * Managed Entities
-
-    Gateway configuration file merging and inheritance mean that the set of attributes applied to an entity will depend on the overall configuration of the gateway and the position of the entity in the hierarchy.
-
-    This is the most common way to set attributes and is the recommended approach for most users.
-    
-    You should create a hierarchy of Managed Entity Groups that reflect your chosen attributes, setting at least one primary attribute on each group and the group name should be the value of that attribute. For example:
-
-    ...
-
 1. Self-Announcing Netprobe configuration
-
-    A Self-Announcing Netprobe ("SAN") can declare its own entities and set attributes on them.
-
 1. Dynamic Entities
 
-    Metrics being ingested into Geneos from external sources can be used to create Dynamic Entities. These entities are created by the gateway when it receives the data and they can have attributes set on them in two ways:
+### Gateway configuration
 
-    * Dynamic Mapping Groups
-    * Dynamic Mappings
+In the main gateway configuration file, attributes can be set on the following elements:
 
-    As well as fixed _Local Attributes_ (which can, uniquely, include interpolated strings from variables), mappings that set the entity name also set the same dimension as an attribute on the created entity. In general these created attributes do not follow the advice in this document and are likely to use names in lowercase etc.
+* Managed Entity Groups
+* Managed Entities
+
+Gateway configuration file merging and inheritance mean that the set of attributes applied to an entity will depend on the overall configuration of the gateway and the position of the entity in the hierarchy.
+
+This is the most common way to set attributes and is the recommended approach for most users.
+
+You should create a hierarchy of Managed Entity Groups that reflect your chosen attributes, setting at least one primary attribute on each group and the group name should be the value of that attribute. For example:
+
+...
+
+### Self-Announcing Netprobe configuration
+
+A Self-Announcing Netprobe ("SAN") can declare its own entities and set attributes on them.
+
+### Dynamic Entities
+
+Metrics being ingested into Geneos from external sources can be used to create Dynamic Entities. These entities are created by the gateway when it receives the data and they can have attributes set on them in two ways:
+
+* Dynamic Mapping Groups
+* Dynamic Mappings
+
+As well as fixed _Local Attributes_ (which can, uniquely, include interpolated strings from variables), mappings that set the entity name also set the same dimension as an attribute on the created entity. In general these created attributes do not follow the advice in this document and are likely to use names in lowercase etc.
 
 ## Recommended Taxonomy
 
-While attributes themselves are arbitrary key/value pairs, it is best to think of them as meeting specific needs.
+While attributes themselves are arbitrary name/value pairs, it is best to consider them meeting specific needs and choosing a set based on those needs.
 
 Attributes fall into 4 common categories:
 
-1. Physical or Logical Location
+1. (Physical or Logical) Location
 1. Technology
 1. Organisational
 1. Miscellaneous
