@@ -1,6 +1,6 @@
 # Geneos Best Practices - Gateway Monitoring
 
-Monitor the monitoring
+MOTM - Monitor the monitoring
 
 Performance
 

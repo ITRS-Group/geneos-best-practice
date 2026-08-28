@@ -25,11 +25,11 @@ $ geneos version
 geneos version v1.21.0
 ```
 
-To check the current release, visit the [cordial repo in github](https://github.com/ITRS-Group/cordial/releases).
+To check the current release, visit the [cordial repo in GitHub](https://github.com/ITRS-Group/cordial/releases).
 
-> 💡 Future releases may include a command to check for later releases and even self-update, as long as you have access to github from your server.
+> 💡 Future releases may include a command to check for later releases and even self-update, as long as you have access to GitHub from your server.
 
-If `geneos` is not installed then please follow the instructions on [github](https://github.com/ITRS-Group/cordial/tree/main/tools/geneos#getting-started) to download and install it.
+If `geneos` is not installed then please follow the instructions on [GitHub](https://github.com/ITRS-Group/cordial/tree/main/tools/geneos#getting-started) to download and install it.
 
 > ⚠ Reminder: `geneos` will only perform operations as the user running it, so be careful using commands which elevate privileges like `sudo` and these will most likely not work as you expect.
 
