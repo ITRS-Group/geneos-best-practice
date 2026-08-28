@@ -1,40 +1,72 @@
 # Geneos Best Practices - Include Files
 
-(Align with attributes)
+Include files allow you to split, share and layer your gateway configurations allowing you to ...
 
-Types:
+By distributing configuration across include files you can control the re-use of common configuration, access permissions and features across multiple Gateways. Even the smallest Geneos environment you should be using include files.
 
-* Functional
-  * Read-only
-  * Upgradeable
-  * Infra, Basic App, Geneos self-monitoring
-  * Specific tech solutions
-  * Naming: ORG.LEVEL.FUNCTION.xml
-  * Located in `../../includes/...`
+## Categories of Include Files
 
-* Shared configuration
-  * Editable
-  * Shared, reloadable
-  * Should match base includes (like above) one-for-one
-  * Located in `../../shared/...`
+There are five common types of include files:
 
-* Local configuration
-  * Editable
-  * Separate file(s) for auth access and partitioning functionality
-  * Located in gateway working directory
+1. Functional
+2. Shared configuration
+3. Local configuration
+4. Templates
+5. Metadata
 
-* Templates
-  * Examples
-  * To be copied before editing
-  * Some automation to generate
-  * Located in other repo / directory, not directly loaded by gateways
+These files can be located in different directories on your Geneos gateway servers or on web servers accessible by specific URLs. The include files can be read-only or editable, depending on their purpose and the level of access required by different users.
 
-* Metadata
-  * Read-only
-  * Generated, reloadable
-  * Located in gateway working directory / URL
+### Functional
 
-...
+A functional include file is designed to encapsulate specific monitoring functionality and can be shared across multiple Gateways. These include files are typically read-only and upgradeable, allowing for consistent monitoring across your environment.
+
+* Read-only
+* Upgradeable
+* Infra, Basic App, Geneos self-monitoring
+* Specific tech solutions
+* Naming: ORG.LEVEL.FUNCTION.xml
+* Located in `../../includes/...`
+
+### Shared configuration
+
+Shared configuration include files are intended to provide common settings and configurations that can be used across multiple Gateways. These files are editable and reloadable, allowing for easy updates and changes.
+
+* Editable
+* Shared, reloadable
+* Should match base includes (like above) one-for-one
+* Located in `../../shared/...`
+
+### Local configuration
+
+Local configuration include files are specific to a single Gateway and are used to provide custom settings and configurations that are unique to that Gateway. These files are editable and can be reloaded as needed.
+
+* Editable
+* Separate file(s) for auth access and partitioning functionality
+* Located in gateway working directory
+
+### Templates
+
+Template include files are intended to provide examples and starting points for creating new monitoring functionality. These files are typically read-only and can be copied and modified to create new include files.
+
+* Examples
+* To be copied before editing
+* Some automation to generate
+* Located in other repo / directory, not directly loaded by gateways
+
+### Metadata
+
+Metadata include files provide information about the configuration and structure of your Geneos environment. These files are typically read-only and can be used to document your configuration and provide context for other users.
+
+* Read-only
+* Generated, reloadable
+* Located in gateway working directory / URL
+
+## Specific Kinds of Include Files
+
+### Authentication
+
+
+## Using Include Files
 
 Locations:
 
