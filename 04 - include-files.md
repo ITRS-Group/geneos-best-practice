@@ -12,19 +12,19 @@ While we don't intend to duplicate the Geneos documentation, it is worth briefly
 
 ### Merging and then Validating
 
-The gateway first merges all the include files based on priority and then loads, validates and applies the resulting configuration. This is important because if some configuration items have the same name, e.g. samplers, but have been created in different files in a different folder hierarchy they will generate their own errors post-merge. This is because the merge process does not check for uniqueness of names, it simply merges the files based on priority.
+The gateway first merges the main setup file and all the enabled include files based on priority and then loads, validates and applies the resulting configuration. Understanding the order of this process is important because if some configuration items have the same name, e.g. samplers, but have been created in different files and in a different folder hierarchy they will generate errors about conflicting names during validation. This is because the merge process does not check the validity of items, it simply merges the files based on priority.
 
 ### Merging at the Configuration Item Level
 
-The merging process also works at the level of configuration item folders. For example, if a Managed Entity Group is defined in two include files (or one include and the main setup file) the resulting group configuration will be a merger of the two settings with priority applied as per the file priority - so if one definition include attributes `A` and `B` and the other defines attributes `B` and `C`, the resulting group will have attributes `A`, `B` and `C`. If both definitions define attribute `B` with different values, the value from the include file with the higher priority will be used.
+The merging process also works at the level of configuration item folders. For example, if a _Managed Entity Group_ is defined in two include files (or one include and the main setup file) the resulting configuration will be the sum of the two settings with conflicting parts resolved based on priority - so, for example, if one definition included attributes `A` and `B` and the other had `B` and `C`, the resulting group will have attributes `A`, `B` and `C`. Where both define attribute `B` with different values, the value from the include file with the higher priority will be used.
 
-This does not apply to non-group/folder configuration items, such as samplers, which are not merged but instead the higher priority definition is used and the lower priority definition is ignored.
+This does not apply to non-group/non-folder configuration items, such as samplers, which are not merged but instead the higher priority definition is used and the lower priority definition is ignored.
 
-This can be very useful for creating a base configuration in one include file and then overriding specific settings in another include file, but it can also lead to unexpected results if the merging process is not well understood. This is, in fact, the way we will describe overriding "read-only" include files with local configuration in this document.
+This feature is very useful for creating a read-only base configuration in one include file and then allowing overriding of specific settings in another (higher priority) file, but it can also lead to unexpected results if the merging process is not well understood. We will use this later in this guide.
 
 ### Merging is not inheritance
 
-The process of merging include files and the content of configuration groups above is unrelated to the features of inheritance in the configuration. Merging happens first and then specific configuration items located in a hierarchy of groups may inherit settings from their parent groups. This is a separate process and should not be confused with merging.
+The process of merging include files, and the content of configuration groups above, is unrelated to the process of inheritance in the configuration. Merging happens first and then specific configuration items located in a hierarchy of groups will inherit settings from their parent groups. This is a separate process and should not be confused with merging.
 
 ## Categories of Include Files
 
