@@ -1,20 +1,42 @@
-# Geneos Best Practices - Include Files
+# Geneos Best Practices - Gateway Configuration - Include Files
 
-Include files allow you to split, share and layer your gateway configurations allowing you to ...
+Gateway include files should be used in all but the most trivial Geneos set-ups.
 
-By distributing configuration across include files you can control the re-use of common configuration, access permissions and features across multiple Gateways. Even the smallest Geneos environment you should be using include files.
+Include files allow the partitioning of gateway configurations into a prioritised and mergeable form which can then be shared and synchronised across multiple gateways. This not only saves time in the long run, it also ensures the configurations are consistent and easier to maintain.
+
+In this document we will describe best practices for Geneos include files, including how to use them, how to structure them, and how to share them across multiple gateways.
+
+## How Include Files Work
+
+While we don't intend to duplicate the Geneos documentation, it is worth briefly establishing how some of the key features of include files work, especially around the process of merging configurations.
+
+### Merging and then Validating
+
+The gateway first merges all the include files based on priority and then loads, validates and applies the resulting configuration. This is important because if some configuration items have the same name, e.g. samplers, but have been created in different files in a different folder hierarchy they will generate their own errors post-merge. This is because the merge process does not check for uniqueness of names, it simply merges the files based on priority.
+
+### Merging at the Configuration Item Level
+
+The merging process also works at the level of configuration item folders. For example, if a Managed Entity Group is defined in two include files (or one include and the main setup file) the resulting group configuration will be a merger of the two settings with priority applied as per the file priority - so if one definition include attributes `A` and `B` and the other defines attributes `B` and `C`, the resulting group will have attributes `A`, `B` and `C`. If both definitions define attribute `B` with different values, the value from the include file with the higher priority will be used.
+
+This does not apply to non-group/folder configuration items, such as samplers, which are not merged but instead the higher priority definition is used and the lower priority definition is ignored.
+
+This can be very useful for creating a base configuration in one include file and then overriding specific settings in another include file, but it can also lead to unexpected results if the merging process is not well understood. This is, in fact, the way we will describe overriding "read-only" include files with local configuration in this document.
+
+### Merging is not inheritance
+
+The process of merging include files and the content of configuration groups above is unrelated to the features of inheritance in the configuration. Merging happens first and then specific configuration items located in a hierarchy of groups may inherit settings from their parent groups. This is a separate process and should not be confused with merging.
 
 ## Categories of Include Files
 
-There are five common types of include files:
+There are five kinds of include files:
 
-1. Functional
-2. Shared configuration
-3. Local configuration
-4. Templates
-5. Metadata
+1. Functional - Redistributable common functionality, read-only, versioned and upgradeable
+2. Shared configuration - Common settings for your organisation spanning multiple gateways, editable but should be versioned
+3. Local configuration - Custom settings for a single gateway or gateway server, editable
+4. Templates - Examples and starting points for new functionality, read-only and copyable
+5. Metadata - Normally externally generated information about the configuration and structure of your Geneos environment, read-only
 
-These files can be located in different directories on your Geneos gateway servers or on web servers accessible by specific URLs. The include files can be read-only or editable, depending on their purpose and the level of access required by different users.
+The main gateway setup file, which loads the includes, doesn't fall directly into any of these categories.
 
 ### Functional
 
@@ -24,7 +46,7 @@ A functional include file is designed to encapsulate specific monitoring functio
 * Upgradeable
 * Infra, Basic App, Geneos self-monitoring
 * Specific tech solutions
-* Naming: ORG.LEVEL.FUNCTION.xml
+* Naming: ORG.LEVEL.PURPOSE.xml
 * Located in `../../includes/...`
 
 ### Shared configuration
