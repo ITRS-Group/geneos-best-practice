@@ -1,3 +1,5 @@
+---
+---
 # Geneos Best Practices - Gateway Configuration - Include Files
 
 Gateway include files should be used in all but the most trivial Geneos set-ups.
