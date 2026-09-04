@@ -1,0 +1,24 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 0.25rem solid var(--borderColor-default, #d0d7de);
+  color: var(--fgColor-default, #1f2328);
+  background-color: var(--bgColor-muted, #f6f8fa);
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: #0969da;
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: #1a7f37;
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: #9a6700;
+}
