@@ -10,13 +10,37 @@ In this document we will describe best practices for Geneos include files, inclu
 
 While we don't intend to duplicate the Geneos documentation, it is worth briefly establishing how some of the key features of include files work, especially around the process of merging configurations.
 
+### Priorities
+
+To reemphasise the documentation, every include file must, and the main setup file, have a unique priority value. The numeric priority is lower-number, higher-priority and the lowest value is 1. The main setup file has the default priority of 1, but this can be changed, and each include you add must have it's own value. The priority value can, in theory, be different for different gateways but this is not common and we would advise against this. In some circumstances the priority could be encoded in the file name, but the value still must be set in the configuration.
+
+```
+Main `gateway.setup.xml`, priority 1 (highest)
+- 📄 Include file `include-example1.200.xml`, priority 200
+- 📄 Include file `include-example2.300.xml`, priority 300
+```
+
+>[!TIP] Best Practice:
+>Use a consistent priority scheme across all gateways, and use the same priority for the same include file across all gateways. This will make it easier to manage and maintain your configurations.
+
 ### Merging and then Validating
 
 The gateway first merges the main setup file and all the enabled include files based on priority and then loads, validates and applies the resulting configuration. Understanding the order of this process is important because if some configuration items have the same name, e.g. samplers, but have been created in different files and in a different folder hierarchy they will generate errors about conflicting names during validation. This is because the merge process does not check the validity of items, it simply merges the files based on priority.
 
 ### Merging at the Configuration Item Level
 
-The merging process also works at the level of configuration item folders. For example, if a _Managed Entity Group_ is defined in two include files (or one include and the main setup file) the resulting configuration will be the sum of the two settings with conflicting parts resolved based on priority - so, for example, if one definition included attributes `A` and `B` and the other had `B` and `C`, the resulting group will have attributes `A`, `B` and `C`. Where both define attribute `B` with different values, the value from the include file with the higher priority will be used.
+The merging process also works at the level of configuration item folders. For example, if a _Managed Entity Group_ is defined in two include files (or one include and the main setup file) the resulting configuration will be the sum of the two settings with conflicting parts resolved based on priority - so, for example, if one definition included attributes `A` and `B` and the other had `B` and `C`, the resulting group will have attributes `A`, `B` and `C`. Where both define attribute `B` with different values, the value from the include file with the higher priority will be used. For example:
+
+```
+Main `gateway.setup.xml`, priority 1 (highest)
+- 📁 Example Group: Attributes: A=1, B=2
+  - 🟦 Entity: Attributes: C=3
+
+Include file `include.xml`, priority 2
+- 📁 Example Group: Attributes: B=3, D=4
+```
+
+After merging, the resulting `Entity` will have attributes `A=1, B=2, C=3, D=4` - `B` retains the value from the higher priority main setup file, while `D` is added from the lower priority include file. `C` comes from the entity itself.
 
 This does not apply to non-group/non-folder configuration items, such as samplers, which are not merged but instead the higher priority definition is used and the lower priority definition is ignored.
 
