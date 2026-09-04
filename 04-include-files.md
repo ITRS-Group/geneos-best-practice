@@ -22,7 +22,7 @@ Main `gateway.setup.xml`, priority 1 (highest)
 - 📄 Include file `include-example2.300.xml`, priority 300
 ```
 
->[!TIP] Best Practice:
+>[!NOTE] Best Practice:
 >Use a consistent priority scheme across all gateways, and use the same priority for the same include file across all gateways. This will make it easier to manage and maintain your configurations.
 
 ### Merging and then Validating
