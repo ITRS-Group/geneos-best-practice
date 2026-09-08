@@ -1,22 +1,6 @@
-# Geneos Good Practices
+# Geneos Best Practices Guidelines - Getting Started
 
-## Introduction
-
-Geneos is ...
-
-* Good Practice
-* Style Guide
-* Examples
-
-In these guides we show you how we recommend you install, configure, operate and maintain Geneos. These guides have been written by the ITRS Professional Services team who have, collectively, many decades of experience with Geneos.
-
-While it is not critical that you have Geneos experience, it would be better if you take some time to familiarise yourself with the architecture of the software. To find out more about Geneos as an enterprise monitoring platform, please take a look around the online documentation, starting with [Geneos Architecture](https://docs.itrsgroup.com/docs/geneos/current/getting-started/architecture/index.html).
-
-We have additional tools to make your experience easier; The main one we will be using is a command line program called, fittingly, `geneos` (note how we display is in fixed-width `code-like` text, to distinguish it from the actual Geneos software) which is part of the [`cordial`](https://github.com/ITRS-Group/cordial) tools, published on github. While everything we show you can be done using traditional system commands, using `geneos` will make things much quicker, simpler and more consistent.
-
-## Prerequisites
-
-### Permissions and Access
+## Permissions and Access
 
 You will need the appropriate level of privileges, or be able call on the help of colleagues in the appropriate teams to assist, including:
 
@@ -29,15 +13,36 @@ You will need the appropriate level of privileges, or be able call on the help o
 
 The various Geneos components all have their own prerequisites and these are listed in the respective technical reference guides.
 
-### Download `geneos`
+## Download `cordial` and the `geneos` utility
 
-Download the latest release of the `geneos` utility from github and install it in a suitable directory as an executable. The latest standalone Linux binary can always be downloaded from <https://github.com/ITRS-Group/cordial/releases/latest/download/geneos>:
+### From ITRS Download Site
+
+You can download the complete `cordial` achive from our download site at <https://resources.itrsgroup.com> under the Utilties section. The direct link to the latest release is <https://resources.itrsgroup.com/download/latest/Cordial+-+Geneos+Utilities>.
+
+Once you have downloaded the archive, extract the `geneos` binary and place it in a directory that is in your `PATH` or create a new directory and add it to your `PATH`.
+
+```bash
+tar xf cordial-<version>.tar.gz
+mkdir -p ${HOME}/bin && cd ${HOME}/bin
+cp ../cordial-<version>/bin/geneos .
+```
+
+>[!NOTE]
+>Because the files in the `tar.gz` archive carry their own poermissions, you do not need to run `chmod +x geneos` after copying it to your `bin` directory.
+
+### From GitHub
+
+If you have direct access to GitHub you can also download the latest release of either the `cordiaal` archive, like above, from <https://github.com/ITRS-Group/cordial/releases/latest> or you can download just the `geneos` binary; the latest standalone Linux binary can always be downloaded from <https://github.com/ITRS-Group/cordial/releases/latest/download/geneos>.
+
+To install it in your user's `bin` directory, do the following:
 
 ```bash
 mkdir ${HOME}/bin && cd ${HOME}/bin
 curl -OL https://github.com/ITRS-Group/cordial/releases/latest/download/geneos
 chmod +x geneos
 ```
+
+<https://resources.itrsgroup.com/download/latest/Cordial+-+Geneos+Utilities>
 
 >[!NOTE]
 >

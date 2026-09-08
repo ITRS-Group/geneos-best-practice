@@ -1,29 +1,32 @@
-# Geneos Good Practices - Installation
-
-> Version: v0.2
->
-> Published: 2025-07-01
-
->[!NOTE]
->This guide was written using Geneos 7.4.2 and the cordial v1.21.0
+# Geneos Best Practices Guidelines - Installation
 
 ## Introduction
 
-Geneos is a well established, mature enterprise monitoring platform.
-
-This guide has been written by the ITRS Professional Service team and shares our experiences over many years installing and managing Geneos.
-
-This guide will show you how to install a Geneos system.
-
-The instructions here are not intended to be either definitive, neither are they an attempt to describe the only way to achieve your goals for Geneos.
-
-This guide assumes a traditional, non-containerised installation either on VMs or bare metal servers. For containers see xxx.
-
-## Getting Started
-
 The initial installation of Geneos can be quick and simple. Don't be discouraged by the volume of options, terminology and concepts. We have written these guides to make things as straight forward as possible.
 
-### Demo System
+There are a smaller number of typical installation scenarios:
+
+* Demo System
+
+  To experiment and learn aboiut Geneos you can install a "demo" system on a single Linux server, VM or docker container. This will give you a Gateway, a Netprobe and a Web Dashboard server.
+
+  If you are running on Windows then you can also install a demo system using WSL2 and the Active Console to connect to it. You can also install the Active Console on Linux or MacOS and connect to a demo system.
+
+* Gateway Server
+
+  The core processing gateway and local netprobes etc.
+
+* Monitored Endpoints
+
+  Netprobes, Collection Agents and other components that are installed on the systems you want to monitor.
+
+  Linux and Windows. Other platforms.
+
+* Utility Services
+
+  License Daemon, Web Dasboard
+
+## Demo System
 
 The most basic Geneos system - typically running on a Linux server or VM or even in a WSL session, consists of a Gateway, a Netprobe to collect data and an Active Console to view the state of the system. You can install a "demo" system without a licence file and be up and running in minutes. For this you do not need to create a special user account or locate an installation directory - the default is to use your account and create a `geneos` directory in your home area.
 
@@ -57,7 +60,7 @@ Finally, download and run the Active Console on your desktop. If you are running
 >[!NOTE]
 >A Geneos "demo" system doesn't require a licence file but is subject to a number of restrictions. You can [read more here](https://devdocs.itrsgroup.com/docs/geneos/current/Gateway_Reference_Guide/gateway_licensing.htm#DemoMode).
 
-### Full Installation
+## Gateway Server
 
 Once you have familiarised yourself with the basic functionality of Geneos through the demo system above, it's time to plan and install Geneos for real. For this you will need to plan where the various components will be installed, the connectivity between them and also have a valid licence file.
 
@@ -88,6 +91,9 @@ Checklist:
 
 * Desktop Access
   * Active Console
+
+
+## Monitored Endpoints
 
 ## Installation Environment
 
@@ -129,15 +135,15 @@ We will explore the contents of each directory throughout the rest of this guide
 
 Geneos components communicate using TCP/IP (IPv4 only). By default all components will listen on a configured port. The default ports are listed below:
 
-Geneos Component | TCP Port | Description
----------|----------|---------
- Gateway | 7039 | Default insecure port
- &nbsp; | 7038 | Default secure port
- Netprobe | 7036 | Default port [^1]
- License Daemon | 7041 | Default port
- Web Server | 8080 | Default insecure port
- &nbsp; | 8443 | Default secure port (?)
- Active Console | 7040 | Default diagnostic port
+| Geneos Component | TCP Port | Description             |
+| ---------------- | -------- | ----------------------- |
+| Gateway          | 7039     | Default insecure port   |
+| &nbsp;           | 7038     | Default secure port     |
+| Netprobe         | 7036     | Default port [^1]       |
+| License Daemon   | 7041     | Default port            |
+| Web Server       | 8080     | Default insecure port   |
+| &nbsp;           | 8443     | Default secure port (?) |
+| Active Console   | 7040     | Default diagnostic port |
 
 [^1]: Self-Announcing Netprobes require a port number to be configured for identity purposes in the Gateway, but can be set to not open a listening port.
 

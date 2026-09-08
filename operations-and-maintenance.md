@@ -1,4 +1,4 @@
-# Geneos Operations and Maintenance
+# Geneos Best Practices Guide - Operations and Maintenance
 
 In this guide we are going to explore how to use the `geneos` command to manage your ITRS Geneos environment. 
 
@@ -61,7 +61,7 @@ Like many modern CLI programs `geneos` follows a common structure of sub-command
 
 ## Geneos Components and Instances
 
-The `geneos` program works with a specific directory structure for the Geneos installation. In this guide we assume that the installation is already complete and you should not need to do anything special to use the `geneos` program. For more details on how to install the initial environment see the [Installation Guide](./../01%20-%20installation-guide.md)
+The `geneos` program works with a specific directory structure for the Geneos installation. In this guide we assume that the installation is already complete and you should not need to do anything special to use the `geneos` program. For more details on how to install the initial environment see the [Installation Guide](<../01 - installation-guide.md>)
 
 Geneos, the software product, is made up of a set of components. Each of these performs a different function in the Geneos architecture.
 
