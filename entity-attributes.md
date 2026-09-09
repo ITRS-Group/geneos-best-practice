@@ -12,9 +12,7 @@ Attributes can be set on Managed Entity Groups and on individual Managed Entitie
 
 ## Attribute Basics
 
-To get you going, you should aim to use the attributes below, starting with the primary list and then, as required, the secondary and tertiary ones. A more extensive list of suggested names and their uses follows in the next section.
-
-Don't be tempted to overload an entity with too many attributes, as this can make it difficult to manage and maintain your gateways. Use only those attributes that are relevant to the way you want to label, group and filter your entities. Use Annotations for any additional name/value pairs that are only used for passing data to Actions and Effects and not for grouping and filtering.
+Don't be tempted to overload an entity with too many attributes, as this can make it difficult to manage and maintain your gateways. Use only those attributes that are relevant to the way you want to label, group and filter your entities. Use Annotations for any additional values that are for passing contextual information to Actions and Effects and not for grouping and filtering.
 
 >[!TIP]
 >BP-3: Avoid overloading entities with too many attributes; use only those that are relevant for labeling, grouping, and filtering. Use Annotations for additional name/value pairs needed for Actions and Effects.
@@ -26,25 +24,40 @@ Attributes are also exported outside of Geneos (see [Uses](#Uses) below) and so 
 >[!TIP]
 >BP-4: Keep attribute names in all **CAPITALS** and use minimal non-alphanumeric characters to ensure consistency and ease of use across your Geneos estate.
 
+To get you going, you should aim to use the attributes below, starting with the primary list and then, as required, the secondary and tertiary ones. A more extensive list of suggested names and their uses follows in the next section.
+
 ### Primary
 
-* `ENVIRONMENT` - Production / PROD, QA, Development, Test, etc.
-* `LOCATION` - Datacentre name, City, Country, Cloud Region, etc.
-* `CATEGORY` - Infrastructure, Application, Database, etc.
+| Attribute     | Examples                                     | Description |
+| ------------- | -------------------------------------------- | ----------- |
+| `ENVIRONMENT` | Production, PROD, QA, UAT, Development, Test | The environment in which the entity operates |
+| `LOCATION`    | Datacentre name, City, Country, Cloud Region | The physical or cloud location of the entity |
+| `CATEGORY`    | Infrastructure, Application, Database        | The high-level category of the entity |
+
+Remember that the values should be pertinent to your specific environment and use cases, but using consistent attribute names will make it easier to manage and understand your Geneos estate.
+
+>[!TIP]
+>BP-5: Always use `ENVIRONMENT`, `LOCATION`, and `CATEGORY` attributes for all entities to ensure consistent classification and easier management across your Geneos estate.
 
 ### Secondary
 
-* `SUBCATEGORY` - Refines the CATEGORY, e.g. Server, Switch etc.
-* `APPLICATION` - Name of the application being monitored, e.g. `Geneos`, `Jenkins`, `Oracle`, etc.
-* `COMPONENT` - DB Server, Web Server, etc.
+| Attribute     | Examples                                                                          | Description |
+| ------------- | --------------------------------------------------------------------------------- | ----------- |
+| `SUBCATEGORY` | Refines the CATEGORY, e.g. Server, Switch etc.                                    | The subcategory of the entity within its high-level category |
+| `APPLICATION` | Name of the application being monitored, e.g. `Geneos`, `Jenkins`, `Oracle`, etc. | The specific application the entity belongs to |
+| `COMPONENT`   | DB Server, Web Server, etc.                                                       | The specific component of the application or infrastructure |
+
+>[!TIP]
+>BP-6: Consider using `SUBCATEGORY`, `APPLICATION`, and `COMPONENT` attributes to provide more detailed classification of your entities, which helps in organizing and filtering them effectively, if they convey meaningful distinctions within your environment.
 
 ### Tertiary
 
-* `OS_FAMILY` - Windows, Linux, Solaris, etc.
-* `DASHBOARD` - Dashboard filter name for synthesised views
+| Attribute   | Examples                                    | Description                                                 |
+| ----------- | ------------------------------------------- | ----------------------------------------------------------- |
+| `OS_FAMILY` | Windows, Linux, Solaris, etc.               | The operating system family of the entity                   |
+| `DASHBOARD` | Dashboard filter name for synthesised views | The name of the dashboard filter used for synthesised views |
 
 ## Uses
-
 
 Attributes have a number of uses:
 
