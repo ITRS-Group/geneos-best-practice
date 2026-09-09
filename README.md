@@ -1,6 +1,6 @@
-# Geneos Best Practices Guidelines
+# Geneos Best Practice Guide
 
-In this set of guides we show you how we recommend you install, configure, operate and maintain Geneos. These guides have been written primarily by the ITRS Professional Services team who have, between them, many decades of experience with Geneos.
+In this guide we show you how we recommend you install, configure, operate and maintain Geneos. This guide has been written largely by the ITRS Professional Services team who have, between them, many decades of experience with Geneos.
 
 >[!IMPORTANT]
 >These guides do not show you how to use the Active Console and are intended for those who will be managing the Geneos environment.
@@ -18,6 +18,7 @@ While it is not critical that you have Geneos experience, it would be better if 
 * [Entity Attributes](./entity-attributes.md)
 * [Include Files](./include-files.md)
 * [Operations and Maintenance](./operations-and-maintenance.md)
+* [Self Monitoring](./self-monitoring.md)
 
 ## Document History
 

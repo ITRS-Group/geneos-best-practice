@@ -28,11 +28,11 @@ To get you going, you should aim to use the attributes below, starting with the 
 
 ### Primary
 
-| Attribute     | Examples                                     | Description |
-| ------------- | -------------------------------------------- | ----------- |
+| Attribute     | Examples                                     | Description                                  |
+| ------------- | -------------------------------------------- | -------------------------------------------- |
 | `ENVIRONMENT` | Production, PROD, QA, UAT, Development, Test | The environment in which the entity operates |
 | `LOCATION`    | Datacentre name, City, Country, Cloud Region | The physical or cloud location of the entity |
-| `CATEGORY`    | Infrastructure, Application, Database        | The high-level category of the entity |
+| `CATEGORY`    | Infrastructure, Application, Database        | The high-level category of the entity        |
 
 Remember that the values should be pertinent to your specific environment and use cases, but using consistent attribute names will make it easier to manage and understand your Geneos estate.
 
@@ -41,11 +41,11 @@ Remember that the values should be pertinent to your specific environment and us
 
 ### Secondary
 
-| Attribute     | Examples                                                                          | Description |
-| ------------- | --------------------------------------------------------------------------------- | ----------- |
+| Attribute     | Examples                                                                          | Description                                                  |
+| ------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | `SUBCATEGORY` | Refines the CATEGORY, e.g. Server, Switch etc.                                    | The subcategory of the entity within its high-level category |
-| `APPLICATION` | Name of the application being monitored, e.g. `Geneos`, `Jenkins`, `Oracle`, etc. | The specific application the entity belongs to |
-| `COMPONENT`   | DB Server, Web Server, etc.                                                       | The specific component of the application or infrastructure |
+| `APPLICATION` | Name of the application being monitored, e.g. `Geneos`, `Jenkins`, `Oracle`, etc. | The specific application the entity belongs to               |
+| `COMPONENT`   | DB Server, Web Server, etc.                                                       | The specific component of the application or infrastructure  |
 
 >[!TIP]
 >BP-6: Consider using `SUBCATEGORY`, `APPLICATION`, and `COMPONENT` attributes to provide more detailed classification of your entities, which helps in organizing and filtering them effectively, if they convey meaningful distinctions within your environment.

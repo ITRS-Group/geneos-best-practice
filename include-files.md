@@ -4,6 +4,9 @@ Gateway include files should be used in all but the most trivial Geneos set-ups.
 
 Include files allow the partitioning of gateway configurations into a prioritised and mergeable form which can then be shared and synchronised across multiple gateways. This not only saves time in the long run, it also ensures the configurations are consistent and easier to maintain.
 
+>[!TIP]
+>BP-1: Always use include files to partition gateway configurations into manageable, reusable, and synchronizable components across multiple gateways.
+
 In this document we will describe best practices for Geneos include files, including how to use them, how to structure them, and how to share them across multiple gateways.
 
 ## How Include Files Work
@@ -20,8 +23,8 @@ Main `gateway.setup.xml`, priority 1 (highest)
 - 📄 Include file `include-example2.300.xml`, priority 300
 ```
 
->[!NOTE] Best Practice:
->Use a consistent priority scheme across all gateways, and use the same priority for the same include file across all gateways. This will make it easier to manage and maintain your configurations.
+>[!TIP]
+>BP-2: Use a consistent priority scheme across all gateways, and use the same priority for the same include file across all gateways. This will make it easier to manage and maintain your configurations.
 
 ### Merging and then Validating
 

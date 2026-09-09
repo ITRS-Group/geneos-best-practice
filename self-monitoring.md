@@ -1,4 +1,4 @@
-# Geneos Best Practices - Gateway Monitoring
+# Geneos Best Practice Guide - Self Monitoring
 
 MOTM - Monitor the monitoring
 

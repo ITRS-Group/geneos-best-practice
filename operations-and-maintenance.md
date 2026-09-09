@@ -1,4 +1,4 @@
-# Geneos Best Practices Guide - Operations and Maintenance
+# Geneos Best Practice Guide - Operations and Maintenance
 
 In this guide we are going to explore how to use the `geneos` command to manage your ITRS Geneos environment. 
 
@@ -15,7 +15,7 @@ $ geneos
   old  geneos-utils  one, install and update software releases, add
   and remove instances, control processes and build template based
   configuration files for SANs and more.       
-...
+
 ```
 
 You should always try to have the latest version installed, which you can check with the `geneos version` command, like this:

@@ -1,15 +1,25 @@
-# Geneos Best Practices Guidelines - Getting Started
+# Geneos Best Practice Guide - Getting Started
+
+Geneos consists of a set of components that work together to provide comprehensive monitoring and management capabilities for your IT infrastructure. The main components include the Active Console, Gateways, and Netprobes. To manage these components, especially in traditional Linux server environments, use the `geneos` command-line utility provided in the `cordial` archive.
+
+>[!TIP]
+>BP-1: Use the `geneos` command-line utility provided in the `cordial` archive to manage Geneos components on traditional Linux server environments.
+
+To get started with Geneos we will first show you how to install the `geneos` command-line utility from the `cordial` archive and then use that to install the various Geneos components on your system. If you already have a running installation you may have other tools provided for your Geneos environment. You will have to adapt the instructions accordingly.
+
+>[!NOTE]
+>If you use existing command line tools that are named `gatewayctl`, `netprobectl`, etc. then these can be migrated to use the `geneos` command-line utility instead. See **LINK** for more information.
 
 ## Permissions and Access
 
 You will need the appropriate level of privileges, or be able call on the help of colleagues in the appropriate teams to assist, including:
 
-* Registered for an ITRS web account to download software
-* Internet access to download software either directly to your systems or via an intermediate host, like your desktop, and can copy them to each server
-* Command line access to the Linux system where Geneos Gateways will be installed
-* Permissions to create new directories and files
-* Can ensure selected TCP ports are open for access on servers where Geneos components are installed
-* Administrative access to any Windows systems where Netprobes are needed, including rights to install software
+- [ ] Internet access to download software components directly or via an intermediate host, like your desktop, and then a way to copy them to each server
+- [ ] Registered for an ITRS account to download software - go [here](https://www.itrsgroup.com/?register=1)
+- [ ] Command line access to the Linux system where Geneos Gateways will be installed
+- [ ] Permissions to create new directories and files
+- [ ] Can ensure selected TCP ports are open for access on servers where Geneos components are installed
+- [ ] Administrative access to any Windows systems where Netprobes are needed, including rights to install software
 
 The various Geneos components all have their own prerequisites and these are listed in the respective technical reference guides.
 

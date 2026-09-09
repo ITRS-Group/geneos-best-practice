@@ -1,4 +1,4 @@
-# Geneos Best Practices Guidelines - Installation
+# Geneos Best Practice Guide - Installation
 
 ## Introduction
 
