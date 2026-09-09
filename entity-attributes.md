@@ -1,19 +1,30 @@
 # Geneos Best Practice - Configuration - Attributes
 
-Attributes are name/value labels that are used with, and only apply to, Managed Entities ("entities") to label, group and filter those entities quickly and efficiently. Setting and using attributes should _always_ be preferred over using wildcard matching of entity names. Ensuring their consistent use across your organisation's monitored estate is crucial to making the best use of Geneos.
+Attributes are fixed name/value pairs that are used with, and only apply to, Managed Entities ("entities") to label, group and filter those entities quickly and efficiently. Setting and using attributes should _always_ be preferred over using wildcard matching of entity names. Ensuring their consistent use across your organisation's monitored estate is crucial to making the best use of Geneos.
+
+>[!TIP]
+>BP-1: Always use attributes to label, group, and filter Managed Entities instead of relying on wildcard matching of entity names.
 
 Attributes can be set on Managed Entity Groups and on individual Managed Entities. They can also be set on Dynamic Mapping Groups and Dynamic Mappings, which are used to create Dynamic Entities. Attributes are inherited from the Managed Entity Group to the Managed Entity and from the Dynamic Mapping Groups to Dynamic Mappings and then to each Dynamic Entity created.
 
-## Basic Attributes
+>[!TIP]
+>BP-2: Set attributes at the highest level possible (Managed Entity Groups or Dynamic Mapping Groups) to ensure consistency and reduce repetitive configuration.
+
+## Attribute Basics
 
 To get you going, you should aim to use the attributes below, starting with the primary list and then, as required, the secondary and tertiary ones. A more extensive list of suggested names and their uses follows in the next section.
 
 Don't be tempted to overload an entity with too many attributes, as this can make it difficult to manage and maintain your gateways. Use only those attributes that are relevant to the way you want to label, group and filter your entities. Use Annotations for any additional name/value pairs that are only used for passing data to Actions and Effects and not for grouping and filtering.
 
->[!IMPORTANT]
->Attribute names and values are case-sensitive and you need to keep this in mind to ensure the consistency required across your growing Geneos estate.
->
->Because attributes can be exported outside of Geneos (see [Uses](#Uses) below) their names should be kept to all **CAPITALS** and make minimal use of non-alphanumeric characters, even if a wider character set is allowed by the Gateway Setup Editor. If you use dashes or underscores in any names then you should only use one or the other for all other cases too. The values of each attribute can be more general but should be consistent across your estate, e.g. avoid mixing case like `London` and `LONDON` or using different word separators, e.g. `Data Center 1` and `Data-Center-1`. The values should have a clear meaning and this must be enforced though a policy of consistent definition and use.
+>[!TIP]
+>BP-3: Avoid overloading entities with too many attributes; use only those that are relevant for labeling, grouping, and filtering. Use Annotations for additional name/value pairs needed for Actions and Effects.
+
+Both attribute names and values are case-sensitive and you need to keep this in mind to ensure the consistency required across your growing Geneos estate.
+
+Attributes are also exported outside of Geneos (see [Uses](#Uses) below) and so names should be kept to all **CAPITALS** and make minimal use of non-alphanumeric characters, even if a wider character set is allowed by the Gateway Setup Editor. If you use dashes or underscores in any names then you should only use one or the other for all other cases too. The values of each attribute can be more general but should be consistent across your estate, e.g. avoid mixing case like `London` and `LONDON` or using different word separators, e.g. `Data Center 1` and `Data-Center-1`. The values should have a clear meaning and this must be enforced though a policy of consistent definition and use.
+
+>[!TIP]
+>BP-4: Keep attribute names in all **CAPITALS** and use minimal non-alphanumeric characters to ensure consistency and ease of use across your Geneos estate.
 
 ### Primary
 
